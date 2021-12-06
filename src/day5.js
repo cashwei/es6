@@ -89,3 +89,18 @@ var b = foo(5);
 b.next(); // {value:6, done:false}
 b.next(12); //{value:8, done:false}
 b.next(13); //{value:42, done:true}
+
+function* dataConsumer() {
+  console.log('Started');
+  console.log(`1. ${yield}`);
+  console.log(`2. ${yield}`);
+  return 'result';
+}
+
+let genObj = dataConsumer();
+genObj.next();
+// Started
+genObj.next('a')
+// 1. a
+genObj.next('b')
+// 2. b
