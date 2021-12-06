@@ -104,19 +104,3 @@ genObj.next('a')
 // 1. a
 genObj.next('b')
 // 2. b
-
-function wrapper(generatorFunction) {
-  return function (...args) {
-    let generatorObject = generatorFunction(...args);
-    generatorObject.next();
-    return generatorObject;
-  };
-}
-
-const wrapped = wrapper(function* () {
-  console.log(`First input: ${yield}`);
-  return 'DONE';
-});
-
-wrapped().next('hello!')
-// First input: hello!
