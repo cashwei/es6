@@ -18,7 +18,7 @@ function idMaker() {
     var index = 0;
     return {
         next:function() {
-            return {value:index++; done:false};
+            return {value:index++, done:false};
         }
     };
 }
