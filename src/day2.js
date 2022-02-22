@@ -92,3 +92,14 @@ move({}); // [undefined, undefined]
 move(); // [0,0]
 
 [1,undefined,3].map((x=yes) => x); //[1,yes,3]
+
+let [x,y,,z] = [1,,3];
+console.log("x:"+x);
+console.log("y:"+y);
+console.log("z:"+z);
+
+let obj = {};
+let arr = [];
+({foo:obj.prop,bar: arr[0]} = {foo:123,bar: true});
+
+let {foo: {bar}} = {baz: 'baz'};
